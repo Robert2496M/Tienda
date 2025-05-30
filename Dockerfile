@@ -1,11 +1,10 @@
 
-
 #Version con jdk17
 FROM maven:3.8.5-openjdk17 as build
 COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
---from=build /target/tienda-1.jar tienda.jar
+COPY --from=build /target/tienda-1.jar tienda.jar
 EXPOSE 80
 entrypoint ["java", "-jar", "tienda.jar"]

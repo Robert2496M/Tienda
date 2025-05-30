@@ -1,0 +1,49 @@
+
+/*Selector de IDs*/
+
+#encabezado {
+    top: 0;
+    left: 0;
+    heigth:10%;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+#menu {
+    top: 10%;
+    left: 0;
+    heigth:5%;
+    width: 100%;
+    position: fixed;
+    text-align: right;
+    background-color: coral;
+}
+
+#barralateral{
+    top: 15%;
+    left: 0;
+    heigth:75%;
+    width: 20%;
+    position: fixed;
+    background-color: darkgreen;
+}
+
+#contenido{
+    top: 15%;
+    left: 20;
+    heigth:75%;
+    width: 80%;
+    position: fixed;
+    background-color: dimgray;
+}
+
+#piePagina{
+    bottom: 0%;
+    left: 0;
+    heigth:10%;
+    width: 100%;
+    position: fixed;
+    background-color: seashell;
+}
