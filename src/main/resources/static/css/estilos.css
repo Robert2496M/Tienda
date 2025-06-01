@@ -47,3 +47,53 @@
     position: fixed;
     background-color: seashell;
 }
+
+.parrafoBlanco {
+    color:white;
+}
+
+.parrafocentrado {
+    text-align: center;
+}
+
+.parrafoRojo {
+    color:red;
+}
+/*Selector para todos los parrafos por ejemplo*/
+/*p {
+    font-size: 20 px;
+}*/
+
+/*Selector multiple*/
+/*p,h1,h2 {
+    font-size: 50px;
+}*/
+
+/*Selector descendente*/
+div p.parrafoBlanco {
+    font-size: 25 px;
+}
+
+/*Selector Universal*/
+/** {
+    font-size: 30px;
+}*/
+
+/*body {
+    background-color: gray;
+}*/
+
+a:visited {
+    font-size: 30px;
+}
+
+a:hover {
+    background-color: green;
+    color:white;
+    transition: 0.5s;
+}
+
+a:active {
+    background-color: purple;
+    color:white;
+}
