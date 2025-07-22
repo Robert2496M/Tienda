@@ -61,8 +61,8 @@
                                     <input type="number" class="form-control" name="precio" required="true"/>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="existncias">[[#{producto.existncias}]]</label>
-                                    <input type="number" class="form-control" name="existncias" required="true"/>
+                                    <label for="existencias">[[#{producto.existencias}]]</label>
+                                    <input type="number" class="form-control" name="existencias" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="activo">[[#{producto.activo}]]</label>
@@ -96,29 +96,29 @@
                                     <thead class="table-dark">
                                         <tr><th>#</th>
                                             <th class="text-center">[[#{producto.descripcion}]]</th>
+                                            <th class="text-center">[[#{producto.categoria}]]</th>
                                             <th class="text-center">[[#{producto.precio}]]</th>
                                             <th class="text-center">[[#{producto.existencias}]]</th>
-                                            <th class="text-center">[[#{producto.total}]]</th>
                                             <th class="text-center">[[#{producto.activo}]]</th>
-                                            <th class="text-center">[[#{producto.categoria}]]</th>
                                             <th></th><th></th></tr>
                                     </thead>
                                     <tbody>
                                         <tr th:each="producto, contador : ${productos}">
-                                            <td class="text-center">[[${contador.count}]]</td>
-                                            <td class="fs-6">[[${producto.descripcion}]]</td>
-                                            <td class="text-end">[[${#numbers.formatDecimal(producto.precio, 1, 'DEFAULT', 2, 'DEFAULT')}]]</td>
-                                            <td class="text-center">[[${producto.existencias}]]</td>
-                                            <td class="text-end">[[${#numbers.formatDecimal(producto.precio*producto.existencias, 1, 'DEFAULT', 2, 'DEFAULT')}]]</td>
-                                            <td  class="text-center" th:text="${producto.activo} ? 'Activa' : 'Inactiva'"/>
+                                            <td>[[${contador.count}]]</td>
+                                            <td>[[${producto.descripcion}]]</td>
                                             <td>[[${producto.categoria.descripcion}]]</td>
-                                            <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
-                                                   class="btn btn-danger">
-                                                    <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a></td>
+                                            <td>[[${producto.precio}]]</td>
+                                            <td>[[${producto.existencias}]]</td>
+                                            <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'"/>
                                             <td>
+                                                <a th:href="@{/producto/eliminar/}+${producto.idProducto}"
+                                                   class="btn btn-danger">
+                                                    <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/producto/modificar/}+${producto.idProducto}"
                                                    class="btn btn-success">
-                                                    <i class="fas fa-pencil"></i> [[#{accion.actualizar}]]</a></td></tr>
+                                                    <i class="fas fa-pencil"></i> [[#{accion.actualizar}]]</a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -167,7 +167,7 @@
                                                         <option th:each="c : ${categorias}"
                                                                 th:value="${c.idCategoria}"
                                                                 th:text="${c.descripcion}"
-                                                                th:field="*{categria.idcategoria}">
+                                                                th:field="*{categoria.idCategoria}">
                                                         </option>
                                                     </select>
                                                 </div>
