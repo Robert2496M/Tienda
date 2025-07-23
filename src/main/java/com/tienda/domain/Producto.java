@@ -41,8 +41,5 @@ public class Producto implements Serializable {
         this.activo = activo;
         this.categoria = categoria;
     }
-
-    
-
        
 }
